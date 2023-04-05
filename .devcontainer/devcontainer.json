@@ -20,16 +20,16 @@
   //},
 
   "waitFor": "onCreateCommand",
-  "onCreateCommand": "gem install geo_scaffold rails -N && rails new sample_map -T",
+  "onCreateCommand": "gem install geo_scaffold -N rails -N && rails new sample_map -T",
   "updateContentCommand": "cd sample_map && bundle install && rails active_storage:install",
-  "postCreateCommand": "rails g geo_scaffold:scaffold Spot name:string photo:attachment lat:float lng:float",
+  "postCreateCommand": "cd sample_map && rails g geo_scaffold:scaffold Spot name:string photo:attachment lat:float lng:float",
   "postAttachCommand": {
     "server": "rails server"
   },
   "customizations": {
     "codespaces": {
       "openFiles": [
-        "app/views/spots/index.html.erb"
+        "app/views/spots/new.html.erb"
       ]
     },
     "vscode": {
